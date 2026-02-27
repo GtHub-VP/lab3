@@ -1,0 +1,11 @@
+fft_vals = np.fft.rfft(ecg)
+fft_freq = np.fft.rfftfreq(len(ecg), 1/sampling_rate)
+
+plt.figure(figsize=(10,4))
+plt.plot(fft_freq, np.abs(fft_vals))
+plt.title("Frequency Spectrum of Clean ECG")
+plt.xlabel("Frequency (Hz)")
+plt.ylabel("Magnitude")
+plt.xlim(0, 100)
+plt.grid()
+plt.show()

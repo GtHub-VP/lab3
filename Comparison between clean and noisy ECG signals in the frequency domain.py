@@ -1,0 +1,12 @@
+fft_noisy = np.fft.rfft(ecg_noisy)
+
+plt.figure(figsize=(10,5))
+plt.plot(fft_freq, np.abs(fft_vals), label="Clean ECG")
+plt.plot(fft_freq, np.abs(fft_noisy), label="Noisy ECG", alpha=0.7)
+plt.title("Frequency Spectrum: Clean vs Noisy ECG")
+plt.xlabel("Frequency (Hz)")
+plt.ylabel("Magnitude")
+plt.xlim(0, 100)
+plt.legend()
+plt.grid()
+plt.show()
